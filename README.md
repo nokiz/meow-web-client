@@ -1,3 +1,7 @@
+# Build and run docker image
+docker build -t meow-web-client-image .
+docker run -p 3000:3000 --name meow-web-client -it meow-web-client-image
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
