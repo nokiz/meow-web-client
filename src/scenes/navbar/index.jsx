@@ -63,7 +63,7 @@ const Navbar = () => {
             backgroundColor={neutralLight}
             borderRadius="9px"
             gap="3rem"
-            padding="0.1rem 0.5rem"
+            padding="0.1rem 1.5rem"
           >
             <InputBase placeholder="Search..." />
             <IconButton>
@@ -98,7 +98,7 @@ const Navbar = () => {
                   pr: "0.25rem",
                   width: "3rem",
                 },
-                "& MuiSelect-select:focus": {
+                "& .MuiSelect-select:focus": {
                   backgroundColor: neutralLight,
                 },
               }}
@@ -107,7 +107,7 @@ const Navbar = () => {
               <MenuItem value={fullName}>
                 <Typography>{fullName}</Typography>
               </MenuItem>
-              <MenuItem onClick={() => dispatch(setLogout())}>Log out</MenuItem>
+              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
             </Select>
           </FormControl>
         </FlexBetween>
@@ -120,7 +120,7 @@ const Navbar = () => {
       )}
 
       {/* MOBILE NAV */}
-      {isNonMobileScreens && isMobileMenuToggled && (
+      {!isNonMobileScreens && isMobileMenuToggled && (
         <Box
           position="fixed"
           right="0"
@@ -141,8 +141,17 @@ const Navbar = () => {
           </Box>
 
           {/* MENU ITEMS */}
-          <FlexBetween display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap="3rem">
-            <IconButton onClick={() => dispatch(setMode())} sx={{ fontSize: "25px" }}>
+          <FlexBetween
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            gap="3rem"
+          >
+            <IconButton
+              onClick={() => dispatch(setMode())}
+              sx={{ fontSize: "25px" }}
+            >
               {theme.palette.mode === "dark" ? (
                 <DarkMode sx={{ fontSize: "25px" }} />
               ) : (
@@ -164,7 +173,7 @@ const Navbar = () => {
                     pr: "0.25rem",
                     width: "3rem",
                   },
-                  "& MuiSelect-select:focus": {
+                  "& .MuiSelect-select:focus": {
                     backgroundColor: neutralLight,
                   },
                 }}
@@ -174,7 +183,7 @@ const Navbar = () => {
                   <Typography>{fullName}</Typography>
                 </MenuItem>
                 <MenuItem onClick={() => dispatch(setLogout())}>
-                  Log out
+                  Log Out
                 </MenuItem>
               </Select>
             </FormControl>
