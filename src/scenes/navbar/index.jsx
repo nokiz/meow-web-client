@@ -56,7 +56,7 @@ const Navbar = () => {
             },
           }}
         >
-          Sociopedia
+          CatPaws
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
