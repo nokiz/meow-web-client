@@ -11,5 +11,6 @@ RUN npm install
 EXPOSE 3000
 
 # Define the command to run your app
-#CMD [ "npm", "run", "start" ]
-CMD [ "npm", "run", "build" ]
+RUN npm run build
+RUN npm install -g serve
+CMD serve -s build
